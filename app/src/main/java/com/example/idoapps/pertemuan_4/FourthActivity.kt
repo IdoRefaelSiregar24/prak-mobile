@@ -1,20 +1,27 @@
 package com.example.idoapps.pertemuan_4
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.idoapps.MainActivity
 import com.example.idoapps.R
+import com.example.idoapps.databinding.ActivityFourthBinding
+import com.example.idoapps.databinding.ActivityMainBinding
 import com.example.idoapps.databinding.ActivityThirdBinding
 
 class FourthActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityFourthBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_fourth)
+        binding = ActivityFourthBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -25,5 +32,28 @@ class FourthActivity : AppCompatActivity() {
         val from = intent.getStringExtra("from")
         val age = intent.getIntExtra("age",0)
         Log.i("Data Intent","Nama: $name , Usia: $age, Asal: $from")
+
+        Log.e("== onCreate", "FourthActivity dibuat pertama kali")
+
+        binding.btnKembali.setOnClickListener {
+
+            finish()
+
+            //Jika menggunakan tombol kembai dengan model manual, yang idak recom karena akan ber stack stack
+//            val intent = Intent(this, MainActivity::class.java)
+//            startActivity(intent)
+        }
+    }
+
+
+    override fun onStart() {
+        super.onStart()
+        Log.e("== onStart", "onStart: FourthActivity terlihat di layar")
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("== onDestroy", "FourthActivity dihapus dari stack")
     }
 }

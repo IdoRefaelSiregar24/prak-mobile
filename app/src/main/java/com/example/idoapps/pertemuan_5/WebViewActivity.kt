@@ -35,9 +35,15 @@ class WebViewActivity : AppCompatActivity() {
             setDisplayShowHomeEnabled(true)
         }
 
-        // WebView
-        binding.webView.webViewClient = WebViewClient()
+        // WebView Setup
         binding.webView.settings.javaScriptEnabled = true
+        binding.webView.webViewClient = WebViewClient()
+
+        // IMPROVISASI: Mengaktifkan fitur Zoom (Cubit layar)
+        binding.webView.settings.setSupportZoom(true)
+        binding.webView.settings.builtInZoomControls = true
+        binding.webView.settings.displayZoomControls = false // Sembunyikan tombol +/- bawaan
+
         binding.webView.loadUrl("https://merdeka.com")
 
         // Back handler

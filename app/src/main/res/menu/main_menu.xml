@@ -5,8 +5,14 @@
         android:id="@+id/action_search"
         android:title="Search"
         android:icon="@android:drawable/ic_menu_search"
-        app:showAsAction="ifRoom" /> <!--Jika Di ganti menjadi Never Maka Masuk ke dalam Option Menu-->
+        app:showAsAction="ifRoom" />
 
+    <item
+        android:id="@+id/action_notif"
+        android:title="Aktifkan Notifikasi"
+        android:checkable="true"
+        android:checked="false"
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/action_settings"

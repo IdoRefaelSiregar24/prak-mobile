@@ -63,11 +63,20 @@ class FifthActivity : AppCompatActivity() {
                 true
             }
             R.id.action_search -> {
-                Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Search diklik", Toast.LENGTH_SHORT).show()
                 true
             }
+
+            // IMPROVISASI: Logika untuk menangkap klik dan mengubah status Checkbox
+            R.id.action_notif -> {
+                item.isChecked = !item.isChecked // Membalikkan status (dari false ke true, atau sebaliknya)
+                val status = if (item.isChecked) "Aktif" else "Nonaktif"
+                Toast.makeText(this, "Notifikasi $status", Toast.LENGTH_SHORT).show()
+                true
+            }
+
             R.id.action_settings -> {
-                Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Settings diklik", Toast.LENGTH_SHORT).show()
                 true
             }
             else -> super.onOptionsItemSelected(item)

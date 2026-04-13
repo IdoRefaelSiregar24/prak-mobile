@@ -9,6 +9,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.idoapps.databinding.ActivityMainBinding
 import com.example.idoapps.databinding.ActivityThirdBinding
+import com.example.idoapps.pertemuan_2.SecondActivity
+import com.example.idoapps.pertemuan_3.ThirdActivity
 import com.example.idoapps.pertemuan_4.FourthActivity
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +26,16 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        binding.btnToSecond.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnToThird.setOnClickListener {
+            val intent = Intent(this, ThirdActivity::class.java)
+            startActivity(intent)
         }
 
         binding.btnToFourth.setOnClickListener {

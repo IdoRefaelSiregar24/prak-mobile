@@ -12,6 +12,7 @@ import com.example.idoapps.databinding.ActivityThirdBinding
 import com.example.idoapps.pertemuan_2.SecondActivity
 import com.example.idoapps.pertemuan_3.ThirdActivity
 import com.example.idoapps.pertemuan_4.FourthActivity
+import com.example.idoapps.pertemuan_5.FifthActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,6 +44,11 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("name", "Politeknik Caltex Riau")
             intent.putExtra("from", "Rumbai")
             intent.putExtra("age", 25)
+            startActivity(intent)
+        }
+
+        binding.btnToFifth.setOnClickListener {
+            val intent = Intent(this, FifthActivity::class.java)
             startActivity(intent)
         }
     }

@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.idoapps.R
 import com.example.idoapps.databinding.ActivityFifthBinding
 import com.example.idoapps.databinding.ActivityFourthBinding
+import java.util.Calendar
 
 class FifthActivity : AppCompatActivity() {
 
@@ -28,10 +29,23 @@ class FifthActivity : AppCompatActivity() {
             insets
         }
 
+        // IMPROVISASI: Logika untuk mendapatkan waktu saat ini
+        val calendar = Calendar.getInstance()
+        val hourOfDay = calendar.get(Calendar.HOUR_OF_DAY)
+
+        // Menentukan sapaan berdasarkan jam
+        val greetingSubtitle = when (hourOfDay) {
+            in 0..11 -> "Selamat Pagi! 🌅"
+            in 12..15 -> "Selamat Siang! ☀️"
+            in 16..18 -> "Selamat Sore! 🌇"
+            else -> "Selamat Malam! 🌙"
+        }
+
         setSupportActionBar(binding.toolbar)
+
         supportActionBar?.apply {
             title = "Activity Fifth"
-            subtitle = "Ini adalah subtitle"
+            subtitle = greetingSubtitle
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
@@ -40,11 +54,6 @@ class FifthActivity : AppCompatActivity() {
             val intent = Intent(this, WebViewActivity::class.java)
             startActivity(intent)
         }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
-        return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -64,5 +73,12 @@ class FifthActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+
 
 }

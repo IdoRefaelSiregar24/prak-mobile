@@ -54,6 +54,24 @@ class FifthActivity : AppCompatActivity() {
             val intent = Intent(this, WebViewActivity::class.java)
             startActivity(intent)
         }
+
+        // IMPROVISASI: Menangkap pergerakan scroll dari NestedScrollView
+        binding.nestedScrollView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
+            // Jika user scroll ke bawah lebih dari 500 pixel, tampilkan tombol
+            if (scrollY > 500) {
+                binding.fabToTop.show()
+            }
+            // Jika user kembali ke atas (kurang dari 500 pixel), sembunyikan tombol
+            else {
+                binding.fabToTop.hide()
+            }
+        }
+
+        // Memberikan aksi pada tombol untuk kembali ke atas
+        binding.fabToTop.setOnClickListener {
+            // Scroll kembali ke titik 0,0 (paling atas) secara mulus
+            binding.nestedScrollView.smoothScrollTo(0, 0)
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

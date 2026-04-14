@@ -48,6 +48,7 @@ class FifthActivity : AppCompatActivity() {
             subtitle = greetingSubtitle
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
         binding.btnWebView.setOnClickListener {

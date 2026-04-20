@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IdoApps">
         <activity
+            android:name=".pertemuan_6.AuthActivity"
+            android:exported="false" />
+        <activity
             android:name=".pertemuan_6.MainActivity"
             android:exported="false" />
         <activity
@@ -44,7 +47,7 @@
         <!-- </intent-filter> -->
         <!-- </activity> -->
         <activity
-            android:name=".pertemuan_6.AuthActivity"
+            android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

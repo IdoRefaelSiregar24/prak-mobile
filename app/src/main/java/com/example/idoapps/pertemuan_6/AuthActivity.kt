@@ -29,11 +29,7 @@ class AuthActivity : AppCompatActivity() {
         }
 
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
-        val isLogin = sharedPref.getBoolean("isLogin", false)
-        if (isLogin) {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
+
 
         binding.btnLogin.setOnClickListener {
             val inputEmail = binding.email.text.toString()

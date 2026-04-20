@@ -28,14 +28,11 @@ class AuthActivity : AppCompatActivity() {
             insets
         }
 
-        val emailDefault = "ido@gmail.com"
-        val passwordDefault = "ido"
-
         binding.btnLogin.setOnClickListener {
             val inputEmail = binding.email.text.toString()
             val inputPassword = binding.Password.text.toString()
 
-            if (inputEmail == emailDefault && inputPassword == passwordDefault) {
+            if (inputEmail == inputPassword) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             } else {

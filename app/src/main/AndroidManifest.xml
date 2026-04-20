@@ -14,9 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IdoApps">
         <activity
-            android:name=".pertemuan_5.WebViewActivity"
+            android:name=".pertemuan_6.MainActivity"
             android:exported="false" />
-        <!-- <activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan_5.WebViewActivity"
+            android:exported="false" /> <!-- <activity -->
         <!-- android:name=".MainActivity" -->
         <!-- android:exported="false" /> -->
         <activity
@@ -39,7 +44,7 @@
         <!-- </intent-filter> -->
         <!-- </activity> -->
         <activity
-            android:name=".MainActivity"
+            android:name=".pertemuan_6.AuthActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

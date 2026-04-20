@@ -28,17 +28,38 @@ class AuthActivity : AppCompatActivity() {
             insets
         }
 
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+        val isLogin = sharedPref.getBoolean("isLogin", false)
+        if (isLogin) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnLogin.setOnClickListener {
             val inputEmail = binding.email.text.toString()
             val inputPassword = binding.Password.text.toString()
 
-            if (inputEmail == inputPassword) {
+            if (inputEmail == inputPassword && inputEmail.isNotEmpty() && inputPassword.isNotEmpty()) {
+
+                val editor = sharedPref.edit()
+                editor.putBoolean("isLogin", true)
+                editor.putString("email",inputEmail)
+                editor.apply()
+
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
+                finish()
             } else {
                 MaterialAlertDialogBuilder(this)
                     .setTitle("Gagal Login")
                     .setMessage("Silahkan Coba Lagi")
+                    .setPositiveButton("Ya") { dialog, _ ->
+                        val editor = sharedPref.edit()
+                        editor.clear()
+                        editor.apply()
+
+                        dialog.dismiss()
+                    }
                     .show()
             }
         }

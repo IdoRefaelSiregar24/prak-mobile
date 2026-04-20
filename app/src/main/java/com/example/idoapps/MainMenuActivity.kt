@@ -2,19 +2,17 @@ package com.example.idoapps
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.idoapps.databinding.ActivityMainBinding
-import com.example.idoapps.databinding.ActivityThirdBinding
 import com.example.idoapps.pertemuan_2.SecondActivity
 import com.example.idoapps.pertemuan_3.ThirdActivity
 import com.example.idoapps.pertemuan_4.FourthActivity
 import com.example.idoapps.pertemuan_5.FifthActivity
 
-class MainActivity : AppCompatActivity() {
+class MainMenuActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 

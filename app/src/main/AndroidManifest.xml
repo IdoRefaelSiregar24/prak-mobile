@@ -17,7 +17,7 @@
             android:name=".pertemuan_6.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".MainMenuActivity"
             android:exported="false" />
         <activity
             android:name=".pertemuan_5.WebViewActivity"

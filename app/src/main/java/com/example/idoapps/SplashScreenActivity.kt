@@ -8,7 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.idoapps.pertemuan_6.AuthActivity
-import com.example.idoapps.pertemuan_6.MainActivity
+import com.example.idoapps.MainActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -28,6 +28,7 @@ class SplashScreenActivity : AppCompatActivity() {
         if (isLogin) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         lifecycleScope.launch {

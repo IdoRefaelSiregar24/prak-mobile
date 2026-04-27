@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.idoapps.MainActivity
 import com.example.idoapps.R
 import com.example.idoapps.databinding.ActivityAuthBinding
 import com.example.idoapps.databinding.ActivityFifthBinding

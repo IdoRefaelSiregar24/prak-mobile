@@ -14,10 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IdoApps">
         <activity
+            android:name=".pertemuan_7.SevenActivity"
+            android:exported="false" />
+        <activity
             android:name=".pertemuan_6.AuthActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan_6.MainActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".MainMenuActivity"

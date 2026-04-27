@@ -57,6 +57,8 @@ class SevenActivity : AppCompatActivity() {
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(binding.fragmentContainer.id, fragment)
+            // Add to back stack digunakan untuk kembali ke fragment sebelumnya
+            // gunakam
             .addToBackStack(null)
             .commit()
     }

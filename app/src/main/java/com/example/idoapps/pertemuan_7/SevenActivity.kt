@@ -7,7 +7,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.idoapps.R
-import com.example.idoapps.databinding.ActivityFifthBinding
 import com.example.idoapps.databinding.ActivitySevenBinding
 
 class SevenActivity : AppCompatActivity() {

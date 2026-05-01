@@ -1,16 +1,12 @@
-package com.example.idoapps.pertemuan_6
+package com.example.idoapps
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.idoapps.R
 import com.example.idoapps.databinding.ActivityAuthBinding
-import com.example.idoapps.databinding.ActivityFifthBinding
-import com.example.idoapps.pertemuan_3.ThirdActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class AuthActivity : AppCompatActivity() {
@@ -42,7 +38,7 @@ class AuthActivity : AppCompatActivity() {
                 editor.putString("email",inputEmail)
                 editor.apply()
 
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, BaseActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {

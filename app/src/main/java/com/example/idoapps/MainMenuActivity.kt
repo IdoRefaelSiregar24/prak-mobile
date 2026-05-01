@@ -7,10 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.idoapps.databinding.ActivityMainBinding
-import com.example.idoapps.pertemuan_2.SecondActivity
-import com.example.idoapps.pertemuan_3.ThirdActivity
-import com.example.idoapps.pertemuan_4.FourthActivity
-import com.example.idoapps.pertemuan_5.FifthActivity
+import com.example.idoapps.Home.pertemuan_2.SecondActivity
+import com.example.idoapps.Home.pertemuan_3.ThirdActivity
+import com.example.idoapps.Home.pertemuan_4.FourthActivity
+import com.example.idoapps.Home.pertemuan_5.FifthActivity
+import com.example.idoapps.Home.pertemuan_7.SevenActivity
 
 class MainMenuActivity : AppCompatActivity() {
 
@@ -47,6 +48,11 @@ class MainMenuActivity : AppCompatActivity() {
 
         binding.btnToFifth.setOnClickListener {
             val intent = Intent(this, FifthActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnToSeven.setOnClickListener {
+            val intent = Intent(this, SevenActivity::class.java)
             startActivity(intent)
         }
     }

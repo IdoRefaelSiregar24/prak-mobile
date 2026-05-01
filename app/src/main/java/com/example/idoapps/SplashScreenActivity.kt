@@ -7,8 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
-import com.example.idoapps.pertemuan_6.AuthActivity
-import com.example.idoapps.pertemuan_6.MainActivity
+import com.example.idoapps.AuthActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -26,8 +25,9 @@ class SplashScreenActivity : AppCompatActivity() {
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
         val isLogin = sharedPref.getBoolean("isLogin", false)
         if (isLogin) {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, BaseActivity ::class.java)
             startActivity(intent)
+            finish()
         }
 
         lifecycleScope.launch {

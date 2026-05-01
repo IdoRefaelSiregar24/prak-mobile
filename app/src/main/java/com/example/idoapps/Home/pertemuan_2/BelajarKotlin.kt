@@ -1,4 +1,4 @@
-package com.example.idoapps.pertemuan_2
+package com.example.idoapps.Home.pertemuan_2
 
 fun main() {
     println("Hai rekan rekan...")

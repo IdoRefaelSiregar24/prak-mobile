@@ -1,4 +1,4 @@
-package com.example.idoapps.pertemuan_3
+package com.example.idoapps.Home.pertemuan_3
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

@@ -1,4 +1,4 @@
-package com.example.idoapps.pertemuan_4
+package com.example.idoapps.Home.pertemuan_4
 
 import android.os.Bundle
 import android.util.Log

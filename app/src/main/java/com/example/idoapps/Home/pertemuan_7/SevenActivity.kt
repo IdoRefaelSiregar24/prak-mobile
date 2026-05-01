@@ -40,9 +40,6 @@ class SevenActivity : AppCompatActivity() {
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
-        // Menampilkan fragment pertama secara default
-        replaceFragment(SatuFragment())
-
         // Setup event click untuk mengganti fragment
         binding.btnFragment1.setOnClickListener {
             replaceFragment(SatuFragment())

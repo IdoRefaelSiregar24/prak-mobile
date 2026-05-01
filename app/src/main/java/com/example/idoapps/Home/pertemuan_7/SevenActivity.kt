@@ -24,6 +24,10 @@ class SevenActivity : AppCompatActivity() {
             insets
         }
 
+        if (savedInstanceState == null) {
+            replaceFragment(SatuFragment(), false)
+        }
+
         setSupportActionBar(binding.toolbar)
         binding.toolbar.setNavigationOnClickListener {
             onBackPressedDispatcher.onBackPressed()
@@ -54,12 +58,14 @@ class SevenActivity : AppCompatActivity() {
 
     }
 
-    private fun replaceFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
+    private fun replaceFragment(fragment: Fragment, addToBackStack: Boolean = true) {
+        val transaction = supportFragmentManager.beginTransaction()
             .replace(binding.fragmentContainer.id, fragment)
-            // Add to back stack digunakan untuk kembali ke fragment sebelumnya
-            // gunakam
-            .addToBackStack(null)
-            .commit()
+
+        if (addToBackStack) {
+            transaction.addToBackStack(null)
+        }
+
+        transaction.commit()
     }
 }

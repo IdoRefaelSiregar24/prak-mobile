@@ -15,6 +15,7 @@ import com.example.idoapps.Home.pertemuan_2.SecondActivity
 import com.example.idoapps.Home.pertemuan_3.ThirdActivity
 import com.example.idoapps.Home.pertemuan_4.FourthActivity
 import com.example.idoapps.Home.pertemuan_5.FifthActivity
+import com.example.idoapps.Home.pertemuan_5.WebViewActivity
 import com.example.idoapps.Home.pertemuan_7.SevenActivity
 import com.example.idoapps.R
 import com.example.idoapps.databinding.FragmentHomeBinding
@@ -34,7 +35,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.apply {
             title = "Home"
         }
@@ -66,6 +66,11 @@ class HomeFragment : Fragment() {
 
             binding.btnToSeven.setOnClickListener {
                 val intent = Intent(requireContext(), SevenActivity::class.java)
+                startActivity(intent)
+            }
+
+            binding.btnWebView.setOnClickListener {
+                val intent = Intent(requireContext(), WebViewActivity::class.java)
                 startActivity(intent)
             }
 

@@ -17,6 +17,7 @@ import com.example.idoapps.Home.pertemuan_4.FourthActivity
 import com.example.idoapps.Home.pertemuan_5.FifthActivity
 import com.example.idoapps.Home.pertemuan_5.WebViewActivity
 import com.example.idoapps.Home.pertemuan_7.SevenActivity
+import com.example.idoapps.Home.pertemuan_9.NinthActivity
 import com.example.idoapps.R
 import com.example.idoapps.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -66,6 +67,11 @@ class HomeFragment : Fragment() {
 
             binding.btnToSeven.setOnClickListener {
                 val intent = Intent(requireContext(), SevenActivity::class.java)
+                startActivity(intent)
+            }
+
+            binding.btnToNinth.setOnClickListener {
+                val intent = Intent(requireContext(), NinthActivity::class.java)
                 startActivity(intent)
             }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,174 +7,198 @@
     android:background="#F8F9FA"
     tools:context=".Home.HomeFragment">
 
-    <View
-        android:id="@+id/background_header"
-        android:layout_width="0dp"
-        android:layout_height="220dp"
-        android:background="@drawable/bg_header_wave"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvWelcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="92dp"
-        android:text="Welcome"
-        android:textColor="@color/yellow_primer"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvSubtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Silahkan di Pilih"
-        android:textColor="@color/yellow_primer"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/tvWelcome"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
-
-    <androidx.core.widget.NestedScrollView
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
 
-        <LinearLayout
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:title="Home"
+            app:titleTextColor="@android:color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <View
+            android:id="@+id/background_header"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:background="@drawable/bg_header_wave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="Welcome"
+            android:textColor="@color/yellow_primer"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- Action Buttons Group -->
-            <TextView
-                android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Silahkan di Pilih"
+            android:textColor="@color/yellow_primer"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tvWelcome"
+            app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:text="Menu Navigasi"
-                android:textAllCaps="true"
-                android:textColor="#757575"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                android:orientation="vertical"
+                android:padding="20dp">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button"
-                style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginBottom="12dp"
-                android:text="Kirim Data"
-                android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:icon="@android:drawable/ic_menu_send" />
+                <!-- Action Buttons Group -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Menu Navigasi"
+                    android:textAllCaps="true"
+                    android:textColor="#757575"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnToSecond"
-                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginBottom="12dp"
-                android:text="Second Activity"
-                android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:icon="@android:drawable/ic_menu_directions" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="Kirim Data"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_menu_send" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnToThird"
-                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginBottom="12dp"
-                android:text="Third Activity"
-                android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:icon="@android:drawable/ic_menu_agenda" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToSecond"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="Second Activity"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_menu_directions" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnToFourth"
-                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginBottom="12dp"
-                android:text="Fourth Activity"
-                android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:icon="@android:drawable/ic_menu_info_details" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToThird"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="Third Activity"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_menu_agenda" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnToFifth"
-                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginBottom="12dp"
-                android:text="Fifth Activity"
-                android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:icon="@android:drawable/ic_menu_view" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToFourth"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="Fourth Activity"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_menu_info_details" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnWebView"
-                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginBottom="12dp"
-                android:text="Web View Bina Desa"
-                android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:icon="@android:drawable/ic_menu_search" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToFifth"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="Fifth Activity"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_menu_view" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnToSeven"
-                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginBottom="24dp"
-                android:text="Seven Activity"
-                android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:icon="@android:drawable/ic_menu_manage" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnWebView"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="Web View Bina Desa"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_menu_search" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnToNinth"
-                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginBottom="24dp"
-                android:text="Ninth Activity"
-                android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:icon="@android:drawable/ic_menu_manage" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToSeven"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="24dp"
+                    android:text="Seven Activity"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_menu_manage" />
 
-            <!-- Danger Zone -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnLogout"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:text="Keluar Aplikasi"
-                android:textAllCaps="false"
-                android:textColor="#D32F2F"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:icon="@android:drawable/ic_lock_power_off"
-                app:iconTint="#D32F2F"
-                app:strokeColor="#D32F2F" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToNinth"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="24dp"
+                    android:text="Ninth Activity"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_menu_manage" />
 
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+                <!-- Danger Zone -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogout"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="Keluar Aplikasi"
+                    android:textAllCaps="false"
+                    android:textColor="#D32F2F"
+                    android:textSize="16sp"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_lock_power_off"
+                    app:iconTint="#D32F2F"
+                    app:strokeColor="#D32F2F" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

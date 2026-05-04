@@ -28,9 +28,12 @@ class BaseActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
             title = "Ido Apps"
-            setDisplayHomeAsUpEnabled(true)
-            setDisplayShowHomeEnabled(true)
+            setDisplayHomeAsUpEnabled(false) // Matikan tombol back
+            setDisplayShowHomeEnabled(false)
         }
+
+        // Sembunyikan AppBarLayout bawaan Activity agar tidak tumpang tindih dengan Toolbar Fragment
+        binding.appBarLayout.visibility = android.view.View.GONE
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

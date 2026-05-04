@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.idoapps.Home.HomeFragment
 import com.example.idoapps.Message.MessageFragment
-import com.example.idoapps.More.MoreFragment
+import com.example.idoapps.More.FragmentMore
 import com.example.idoapps.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
@@ -57,7 +57,7 @@ class BaseActivity : AppCompatActivity() {
                     true
                 }
                 R.id.more -> {
-                    replaceFragment(MoreFragment(), false)
+                    replaceFragment(FragmentMore(), false)
                     true
                 }
                 else -> false

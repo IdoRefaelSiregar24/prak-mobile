@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IdoApps">
-
+        <activity
+            android:name=".Home.pertemuan_10.TenthActivity"
+            android:exported="false" />
         <activity
             android:name=".Home.pertemuan_9.NinthActivity"
             android:exported="false" />

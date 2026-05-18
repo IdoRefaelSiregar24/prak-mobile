@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.idoapps.AuthActivity
+import com.example.idoapps.Home.pertemuan_10.TenthActivity
 import com.example.idoapps.Home.pertemuan_2.SecondActivity
 import com.example.idoapps.Home.pertemuan_3.ThirdActivity
 import com.example.idoapps.Home.pertemuan_4.FourthActivity
@@ -74,6 +75,11 @@ class HomeFragment : Fragment() {
                 val intent = Intent(requireContext(), NinthActivity::class.java)
                 startActivity(intent)
             }
+
+            binding.btnToTen.setOnClickListener {
+            val intent = Intent(requireContext(), TenthActivity::class.java)
+            startActivity(intent)
+        }
 
             binding.btnWebView.setOnClickListener {
                 val intent = Intent(requireContext(), WebViewActivity::class.java)

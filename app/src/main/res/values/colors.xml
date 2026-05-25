@@ -4,5 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="yellow_primer">#F5920B</color>
     <color name="green_primer">#28B400</color>
-
+    <color name="blue_tutorial1">#5EB1F3</color>
+    <color name="blue_tutorial2">#70B676</color>
+    <color name="blue_tutorial3">#7850BEC1</color>
+    <color name="abu_gelap">#78A4A4A4</color>
 </resources>

@@ -160,10 +160,10 @@ class HomeFragment : Fragment() {
                 binding.rvGallery.adapter = adapter
 
                 /** List Tampil Vertical*/
-                binding.rvGallery.layoutManager = LinearLayoutManager(requireContext())
+                // binding.rvGallery.layoutManager = LinearLayoutManager(requireContext())
 
                 /** List Tampil Horizontal */
-                //binding.rvGallery.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                binding.rvGallery.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
                 /** List Tampil Grid */
                 //binding.rvGallery.layoutManager = GridLayoutManager(requireContext(),2)

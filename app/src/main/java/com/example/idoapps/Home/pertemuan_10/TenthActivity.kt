@@ -35,6 +35,10 @@ class TenthActivity : AppCompatActivity() {
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
+        binding.toolbar.setNavigationOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
+
 //        1. Inisialisasi Adapter
         val tabsAdapter = TenthTabsAdapter(this)
 

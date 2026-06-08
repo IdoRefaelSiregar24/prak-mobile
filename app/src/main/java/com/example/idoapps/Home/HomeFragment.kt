@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.idoapps.AuthActivity
+import com.example.idoapps.Home.pertemuan_13.ThirteenthActivity
 import com.example.idoapps.Home.pertemuan_10.TenthActivity
 import com.example.idoapps.Home.pertemuan_2.SecondActivity
 import com.example.idoapps.Home.pertemuan_3.ThirdActivity
@@ -21,7 +22,6 @@ import com.example.idoapps.Home.pertemuan_5.FifthActivity
 import com.example.idoapps.Home.pertemuan_5.WebViewActivity
 import com.example.idoapps.Home.pertemuan_7.SevenActivity
 import com.example.idoapps.Home.pertemuan_9.NinthActivity
-import com.example.idoapps.R
 import com.example.idoapps.data.api.CatFactApiClient
 import com.example.idoapps.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -88,6 +88,11 @@ class HomeFragment : Fragment() {
 
         binding.btnWebView.setOnClickListener {
             val intent = Intent(requireContext(), WebViewActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnToThirdteenth.setOnClickListener {
+            val intent = Intent(requireContext(), ThirteenthActivity::class.java)
             startActivity(intent)
         }
 

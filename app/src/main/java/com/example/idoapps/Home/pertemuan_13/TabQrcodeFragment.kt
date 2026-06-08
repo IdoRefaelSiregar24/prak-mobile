@@ -1,11 +1,16 @@
 package com.example.idoapps.Home.pertemuan_13
 
+import android.graphics.Bitmap
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.idoapps.databinding.FragmentTabQrcodeBinding
+import com.google.zxing.BarcodeFormat
+import com.google.zxing.EncodeHintType
+import com.google.zxing.qrcode.QRCodeWriter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,4 +33,36 @@ class TabQrcodeFragment : Fragment() {
         _binding = FragmentTabQrcodeBinding.inflate(inflater, container, false)
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.btnGenerate.setOnClickListener {
+            val text = binding.edtQrInput.text.toString().trim()
+            if (text.isEmpty()) return@setOnClickListener
+            binding.ivQrCode.setImageBitmap(createQR(text))
+        }
+    }
+
+    private fun createQR(text: String): Bitmap {
+        val writer = QRCodeWriter()
+        val matrix = writer.encode(
+            text,
+            BarcodeFormat.QR_CODE,
+            500,
+            500,
+            mapOf(EncodeHintType.CHARACTER_SET to "UTF-8")
+        )
+        return Bitmap.createBitmap(500, 500, Bitmap.Config.RGB_565).apply {
+            for (x in 0 until 500) {
+                for (y in 0 until 500) {
+                    setPixel(x, y, if (matrix.get(x, y)) Color.BLACK else Color.WHITE)
+                }
+            }
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
 }

@@ -16,9 +16,9 @@ class ThirteenthTabsAdapter(activity: FragmentActivity) : FragmentStateAdapter(a
     // Menentukan Fragment mana yang akan ditampilkan berdasarkan posisi tab
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> TabCaptureFragment()
-            1 -> TabScanFragment()
-            2 -> TabQrcodeFragment()
+            0 -> TabScanFragment()
+            1 -> TabQrcodeFragment()
+            2 -> TabCaptureFragment()
             else -> throw IllegalStateException("Posisi tidak valid")
         }
     }

@@ -11,41 +11,40 @@
         android:id="@+id/imageView2"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="150dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/check_icon" />
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="338dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/outfit_semibold"
-        android:text="Kode berhasil dikirim! Silahkan periksa nomor Anda”"
+        android:text="Berhasil!"
         android:textAlignment="center"
         android:textColor="@color/yellow_primer"
-        android:textSize="20dp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="338dp"
-        android:layout_height="56dp"
+        android:id="@+id/tvResultMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/outfit_semibold"
-        android:text="Pesan berhasil dikirim! Silahkan cek no Anda”"
+        android:text="Pesan berhasil dikirim! Silahkan cek nomor Anda"
         android:textAlignment="center"
         android:textColor="#810000"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.782" />
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
